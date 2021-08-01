@@ -6,7 +6,14 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import dados.FilmeDados;
-
+/********************************************
+ * Autor: Raman Melo Cavalcante
+ * Matricula: 201820754
+ * Inicio: 25/07/2021
+ * Ultima alteracao: 01/08/2021
+ * Nome: Filme
+ * Funcao: Classe do objeto Usuario
+ ********************************************/
 public class Filme implements Serializable{
     private String nome;
     private String diretor;
@@ -22,12 +29,22 @@ public class Filme implements Serializable{
         this.comentario = comentario;
         this.nickNameF = nickNameF;
     }
-    //metodo para adicionar filme chamando o metodo da classe FilmeDados
+    /******************************************
+     * Metodo: adicionarFilme
+     * Funcao: chama o metodo adicionarFilme da classe FilmeDados
+     * Parametros: Objto do tipo Filme
+     * Retorno: void
+     ******************************************/
     public void adicionarFilme(Filme objFilme){
         FilmeDados fd = new FilmeDados();
         fd.adicionarFilme(objFilme);
     }
-    //metodo usada pra listar filmes chamando metodo da classe FilmeDados
+    /******************************************
+     * Metodo: listarFilme
+     * Funcao: chama o metodo listarFime da classe FilmeDados
+     * Parametros: não recebe parametros
+     * Retorno: ArrayList do Tipo Filme 
+     ******************************************/
     public ArrayList<Filme> listarFilme() throws FileNotFoundException, ClassNotFoundException, IOException{
         FilmeDados fd = new FilmeDados();
         return fd.listarFilme();
