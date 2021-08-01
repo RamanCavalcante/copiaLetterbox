@@ -13,8 +13,15 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
-import jdk.nashorn.internal.objects.Global;
 
+/********************************************
+ * Autor: Raman Melo Cavalcante
+ * Matricula: 201820754
+ * Inicio: 25/07/2021
+ * Ultima alteracao: 01/08/2021
+ * Nome: PagCadastroController
+ * Funcao: realiza o cadastro do usuario
+ ********************************************/
 public class TelaInicialController {
 
     @FXML
@@ -34,6 +41,12 @@ public class TelaInicialController {
 
     public static String nick;
     
+    /******************************************
+    * Metodo: login
+    * Funcao: acao do botao btnLogin, testa se o login e valido e chama PagUsuario.fxml
+    * Parametros: ActionEvent event
+    * Retorno: void
+     ******************************************/
     @FXML
     void login(ActionEvent event) throws IOException, ClassNotFoundException {
         PagUsuarioController UserControle = new PagUsuarioController();
@@ -73,8 +86,13 @@ public class TelaInicialController {
      }
 }
 
+    /******************************************
+    * Metodo: openCadastro
+    * Funcao: acao do botao btnCadastro, chama PagCadastro.fxml
+    * Parametros: ActionEvent event
+    * Retorno: void
+    s******************************************/
     @FXML
-    //chama a tela de cadastro do usuario
     void openCadastro(ActionEvent event) throws IOException {
          PagCadastroController pagCad = new PagCadastroController();
         FXMLLoader usuarioLoader = new FXMLLoader(getClass().getResource("/layout/PagCadastro.fxml"));

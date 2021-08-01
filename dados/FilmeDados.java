@@ -8,11 +8,25 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
-
-
 import modelo.Filme;
+/********************************************
+ * Autor: Raman Melo Cavalcante
+ * Matricula: 201820754
+ * Inicio: 25/07/2021
+ * Ultima alteracao: 01/08/2021
+ * Nome: FilmeDados
+ * Funcao: Gravar objeto do tipo filme no arquivo .ser e listar os 
+ *         objetos gravados
+ ********************************************/
 
-public class FilmeDados implements Serializable{// gravar um objeto do tipo filme no arquivo .ser
+public class FilmeDados implements Serializable{
+    
+    /******************************************
+    * Metodo: aicionaFilme
+    * Funcao: gravas objeto do filme no arquivo .ser
+    * Parametros: Filme objFilme
+    * Retorno: void
+     ******************************************/
     public void adicionarFilme(Filme objFilme){
         ArrayList<Filme> listFilme = new ArrayList<>();
             try{
@@ -39,7 +53,12 @@ public class FilmeDados implements Serializable{// gravar um objeto do tipo film
                e.printStackTrace();
            }
         }
-        //listar filmes gravados no aquivo .ser
+        /******************************************
+        * Metodo: listarFilme
+        * Funcao: acao do botao btnLogin, testa se o login e valido e chama PagUsuario.fxml
+        * Parametros: ActionEvent event
+        * Retorno: ArrayList<Filme> listFilme
+        ******************************************/
         public ArrayList<Filme> listarFilme() throws FileNotFoundException, IOException, ClassNotFoundException{
             ArrayList <Filme> listFilme = new ArrayList<>();
             File endereco = new File ("filmes.ser");

@@ -12,7 +12,7 @@ import dados.FilmeDados;
  * Inicio: 25/07/2021
  * Ultima alteracao: 01/08/2021
  * Nome: Filme
- * Funcao: Classe do objeto Usuario
+ * Funcao: Classe do objeto Filme
  ********************************************/
 public class Filme implements Serializable{
     private String nome;

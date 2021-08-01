@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-
 import controle.FilmeControle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,7 +10,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-
+/********************************************
+ * Autor: Raman Melo Cavalcante
+ * Matricula: 201820754
+ * Inicio: 25/07/2021
+ * Ultima alteracao: 01/08/2021
+ * Nome: PagAddFilmeController
+ * Funcao: adciona os Filmes do usuario
+ ********************************************/
 public class PagAddFilmeController {
 
     @FXML
@@ -32,14 +38,18 @@ public class PagAddFilmeController {
     @FXML
     private TextArea TextFieldAreaComentario;
     
-
     @FXML
     private Button btnQuit;
 
     @FXML
     private Button btnVoltar;
 
-    
+    /******************************************
+     * Metodo: addFilme
+     * Funcao: Acao do botao btnAddFilme, adiciona Filmes
+     * Parametros: ActionEvent event
+     * Retorno: void
+     ******************************************/
     @FXML
     void addFilme(ActionEvent event) {
         FilmeControle objControleFilme = new FilmeControle();
@@ -54,6 +64,12 @@ public class PagAddFilmeController {
         TextFieldAreaComentario.setText("");
     }
 
+     /******************************************
+     * Metodo: sair
+     * Funcao: Acao do botao btnQuit, chama TelaInicial.fxml
+     * Parametros: ActionEvent event
+     * Retorno: void
+     ******************************************/
     @FXML
     void sair(ActionEvent event) throws IOException {
         FXMLLoader usuarioLoader = new FXMLLoader(getClass().getResource("/layout/TelaInicial.fxml"));
@@ -61,6 +77,12 @@ public class PagAddFilmeController {
         telaAdicionaFilmes.getChildren().setAll(pagCadastro);
     
     }
+    /******************************************
+     * Metodo: back
+     * Funcao: Acao do botao btnVoltar, chama PagUsuario.fxml
+     * Parametros: ActionEvent event
+     * Retorno: void
+     ******************************************/   
     @FXML
     void back(ActionEvent event) throws IOException {
         FXMLLoader usuarioLoader = new FXMLLoader(getClass().getResource("/layout/PagUsuario.fxml"));

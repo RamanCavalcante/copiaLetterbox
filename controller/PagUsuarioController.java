@@ -12,6 +12,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
+/********************************************
+ * Autor: Raman Melo Cavalcante
+ * Matricula: 201820754
+ * Inicio: 25/07/2021
+ * Ultima alteracao: 01/08/2021
+ * Nome: PagCadastroController
+ * Funcao: realiza o cadastro do usuario
+ ********************************************/
 public class PagUsuarioController {
 
     @FXML
@@ -26,24 +34,29 @@ public class PagUsuarioController {
     @FXML
     private Button btnQuit;
 
-	
-
-  
+	/******************************************
+     * Metodo: initialize
+     * Funcao: lista todos o filmes adicionados pelo usuario
+     * Parametros: Objto do tipo Usuario
+     * Retorno: void
+     ******************************************/
     @FXML
-    // metodo que imprmi no label logo quando a tela for iniciado 
     void initialize() throws FileNotFoundException, ClassNotFoundException, IOException {
-  
     try{
         FilmeControle objC = new FilmeControle();
-        
         labeListFilmes.setText(objC.listarFilme(TelaInicialController.nick));//lista so filmes do usuario logado
-        }catch(EOFException e){
+        }catch(EOFException e){//caso o usuario não tenha nenhum filme adicionado
             labeListFilmes.setText("Nenhum filme adicionado");
         }
     }
 
     @FXML
-    //chama a tela para adicionar um filme
+    /******************************************
+    * Metodo: padAddFilme
+    * Funcao: acao botao btnAddFilme, chama PagAddFilme.fxml 
+    * Parametros: ActionEvent event
+    * Retorno: void
+    ******************************************/
     void pagAddFilme(ActionEvent event) throws IOException {
         PagAddFilmeController objAddFilme = new PagAddFilmeController();
         FXMLLoader usuarioLoader = new FXMLLoader(getClass().getResource("/layout/PagAddFilme.fxml"));
@@ -51,7 +64,12 @@ public class PagUsuarioController {
         pagUsuario.getChildren().setAll(pagAddFilme);
     }
     @FXML
-    //volta para a tela inicial
+    /******************************************
+    * Metodo: sair
+    * Funcao: acao botao btnQuit, chama TelaInicial.fxml
+    * Parametros: ActionEvent event
+    * Retorno: void
+    ******************************************/
     void sair(ActionEvent event) throws IOException {
         FXMLLoader usuarioLoader = new FXMLLoader(getClass().getResource("/layout/TelaInicial.fxml"));
         Parent pagCadastro = usuarioLoader.load();

@@ -13,6 +13,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 
+/********************************************
+ * Autor: Raman Melo Cavalcante
+ * Matricula: 201820754
+ * Inicio: 25/07/2021
+ * Ultima alteracao: 01/08/2021
+ * Nome: PagCadastroController
+ * Funcao: realiza o cadastro do usuario
+ ********************************************/
 public class PagCadastroController {
 
 	@FXML
@@ -32,7 +40,12 @@ public class PagCadastroController {
 
 	@FXML
 	private Button btnQuit;
-
+    /******************************************
+     * Metodo: cadastroUser
+     * Funcao: acao do btnCadastrarUser, cadastro usuario
+     * Parametros: ActionEvent event
+     * Retorno: void
+     ******************************************/
 	@FXML
 	void cadastroUser(ActionEvent event) throws IOException {
 	   try{
@@ -65,15 +78,27 @@ public class PagCadastroController {
 		alerta.setContentText("A senha deve conter apenas numeros");
 		alerta.showAndWait();
 		TextFieldSenha.setText("");
-	 }
+	 	}
 	}
 
+    /******************************************
+    * Metodo: sair
+    * Funcao: acao do btnQuit, chama TelaInicial.fxml
+    * Parametros: ActionEvent event
+    * Retorno: void
+    ******************************************/
 	@FXML
-	void sair(ActionEvent event) throws IOException {// Esse evento retorna para a pagina inicial
+	void sair(ActionEvent event) throws IOException {
 		FXMLLoader usuarioLoader = new FXMLLoader(getClass().getResource("/layout/TelaInicial.fxml"));
 		Parent PagInicial = usuarioLoader.load();
 		telaCadastro.getChildren().setAll(PagInicial);
 	}
+    /******************************************
+    * Metodo: sair
+    * Funcao: acao logo depois que o cadastro do usuario ser efetuado
+    * Parametros: ActionEvent event
+    * Retorno: void
+    ******************************************/
 	@FXML
 	void openInicial(ActionEvent event)throws IOException{// Esse evento retorna para a pagina inicial
 		FXMLLoader usuarioLoader = new FXMLLoader(getClass().getResource("/layout/TelaInicial.fxml"));
