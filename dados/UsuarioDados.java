@@ -72,8 +72,6 @@ public class UsuarioDados implements Serializable {
             lerObj.close();
             return listUsuario;
           }
-    
-
     /******************************************
     * Metodo: pesquisaUsario
     * Funcao: Pesquisa o Usuario

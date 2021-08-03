@@ -50,18 +50,20 @@ public class PagCadastroController {
 	void cadastroUser(ActionEvent event) throws IOException {
 	   try{
 		UsuarioControle objC = new UsuarioControle();
-		String nickName = TextFieldNickName.getText();
-		String email = TextFieldEmail.getText();
+		String verificaNickName = TextFieldNickName.getText();
+		String verificaEmail = TextFieldEmail.getText();
 		String verificaSenha = TextFieldSenha.getText();
-	   
-		if(verificaSenha.length()==0){//verifica se o espaço na caixa da senha foi preenchido
+	  
+		if(verificaSenha.length()==0 | verificaEmail.length()==0 | verificaNickName.length()==0){//verifica se o espaço na caixa da senha foi preenchido
 			Alert alerta = new Alert(AlertType.INFORMATION);
 			alerta.setTitle("Error");
 			alerta.setHeaderText(null);
-			alerta.setContentText("Campo de senha vazio!");
+			alerta.setContentText("preencha todos os campos!");
 			alerta.showAndWait();
 			
 		}else{//mensagem de alerta e chamando metedo para abrir TelaInicial
+			String nickName = verificaNickName;
+			String email = verificaEmail;
 			long senha = Long.parseLong(verificaSenha);
 			objC.cadastrarUsuario(nickName, email, senha);
 			Alert alerta = new Alert(AlertType.INFORMATION);
