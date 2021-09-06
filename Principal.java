@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import modelo.Filme;
 import controller.TelaInicialController;
+
 /********************************************
  * Autor: Raman Melo Cavalcante
  * Matricula: 201820754
@@ -16,8 +17,6 @@ import controller.TelaInicialController;
  * Funcao: Inicializa o programa
  ********************************************/
 public class Principal extends Application {
-
-
     public static void main(String[] args) {
         launch(args);
     }
@@ -29,10 +28,12 @@ public class Principal extends Application {
     ******************************************/
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/layout/TelaInicial.fxml"));
+    
+			Parent root = FXMLLoader.load(getClass().getResource("/layout/TelaInicial.fxml"));
         Scene scene  = new Scene(root);
         primaryStage.setTitle("Copia do letterbox");
         primaryStage.setScene(scene);
         primaryStage.show();
-    }
+    
+			}
 }
